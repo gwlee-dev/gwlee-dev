@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geonwoo Lee</title>
+    <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="js/fullpage.js"></script>
+    <link rel="stylesheet" href="css/fullpage.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="top-nav">
+            <div class="nav-bar">
+                <a class="nav-logo" href="/">GW<span>LEE</span></a>
+                <ul class="nav-list">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="http://blog.naver.com/i1384992">Blog</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div id="fullpage">
+        <div class="section active">
+            <div class="container" id="home">
+                <div class="cover-text">
+                    <span>Hi there 👋</span>
+                    <h1>Geonwoo Lee</h1>
+                    <h2>Web Publisher</h2>
+                    <span class="sns-group">
+                        <a href="http://instagram.com/thisis_woo"><i class="bi bi-instagram"></i></a>
+                        <a href="http://be.net/gwlee"><i class="bi bi-behance"></i></a>
+                        <a href="https://github.com/gwlee-dev"><i class="bi bi-github"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <h1>about me</h1>
+                <h2>2021 10 23 (주) 그리드원 근무중</h2>
+                <hr>
+                <h3>퍼블도하고 디자인도 해요🍟🍟</h3>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <h1>my portfolio</h1>
+                <h2>this website will be my first web-based portfolio</h2>
+                <hr>
+                <h3>it's already 4 am.. i'm gonna sleep immediatley</h3>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+                <h1>please hire me</h1>
+                <h2>i wannna be your dog</h2>
+                <hr>
+                <h3>bow wow bow wow</h3>
+            </div>
+        </div>
+        <div class="section fp-auto-height">
+            <div class="container" id="footer">
+                <a href="http://gwlee-dev.github.io">gwlee-dev.github.io</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        new fullpage('#fullpage', {
+            anchors:['home', 'about', 'portfolio', 'contact', 'footer'],
+            autoScrolling:true,
+            scrollHorizontally: true
+        });
+    </script>
+</body>
+</html>
