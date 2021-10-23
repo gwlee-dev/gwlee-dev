@@ -4,6 +4,7 @@
 
 @media(prefers-color-scheme: light) {
     :root {
+        --bg-page: #fff;
         --bg-nav: #f8f9fa;
         --text-body: #323232;
     }
@@ -11,6 +12,7 @@
 
 @media(prefers-color-scheme: dark) {
     :root {
+        --bg-page: #000;
         --bg-nav: #343a40;
         --text-body: #ffffff;
     }
@@ -32,6 +34,7 @@ html, body {
     position: relative;
     color: var(--text-body);
     margin: 0;
+    background-color: var(--bg-page);
 }
 
 header {
@@ -96,7 +99,7 @@ ul.nav-list li > a::after {
     display: block;
     position: absolute;
     margin-top: 3px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--bg-page);
     transition:all .3s ease;
 }
 
@@ -108,7 +111,7 @@ ul.nav-list li:hover > a::after {
     display: block;
     position: absolute;
     margin-top: 3px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid var(--bg-page);
     transition:all .3s ease;
 }
 
