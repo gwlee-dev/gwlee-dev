@@ -1,5 +1,4 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 
 @media(prefers-color-scheme: light) {
@@ -37,6 +36,18 @@ html, body {
     background-color: var(--bg-page);
 }
 
+@media (max-width: 1920px) { 
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 768px) { 
+    html {
+        font-size: 80%;
+    }
+}
+
 header {
     position: fixed;
     width: 100%;
@@ -54,15 +65,15 @@ nav.top-nav {
 nav.top-nav > div.nav-bar {
     display: flex;
     align-items: center;
-    padding: 0 3em;
+    padding: 0 3rem;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
 }
 
 a.nav-logo {
     display: block;
-    font-size: 1.75em;
-    line-height: 1.75em;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
     letter-spacing: 1rem;
     margin: 1em 0;
     margin-right: auto;
@@ -79,8 +90,8 @@ ul.nav-list {
 
 ul.nav-list li {
     display: block;
-    padding: 0.5em 1em;
-    font-size: 1.25em;
+    padding: 0.5em 1rem;
+    font-size: 1.25rem;
 }
 
 ul.nav-list li a {
@@ -115,12 +126,10 @@ ul.nav-list li:hover > a::after {
     transition:all .3s ease;
 }
 
-
-
 /****sections****/
 
 div.container {
-    padding: 0 10em;
+    padding: 0 10%;
 }
 
 div.container#home {
@@ -129,25 +138,32 @@ div.container#home {
     justify-content: center;
     height: 100vh;
     align-items: center;
-    background-image: url("../img/home_bg.jpg");
+    background-image: url("../img/home_bg.png");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center center;
+    background-position: bottom center;
     color: #fff;
+}
+
+div.cover-text span {
+    font-size: 1.25rem;
 }
 
 div.cover-text h1 {
     margin: 0;
+    font-size: 10vw;
+    text-transform: uppercase;
 }
 
 div.cover-text h2 {
     margin: 0;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
+    font-size: 3rem;
 }
 
 div.cover-text i {
-    font-size: 1.5em;
-    line-height: 1.5em;
+    font-size: 1.5rem;
+    line-height: 1.5rem;
     margin: 0.1rem;
 }
 
@@ -155,16 +171,16 @@ span.sns-group {
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
-    padding: 0.25em 0.75em;
-    border-radius: 1.5em;
+    padding: 0.25em 0.75rem;
+    border-radius: 1.5rem;
 }
 
 div.container#footer {
     display: block;
     border-top: 1px solid #f8f9fa;
-    font-size: 1em;
+    font-size: 1rem;
     padding: 1em 0;
-    height: 1.5em;
+    height: 1.5rem;
     text-align: center;
     background-color:#fff;
     color: #d2d2d2;
