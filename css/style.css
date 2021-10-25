@@ -1,6 +1,8 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 
+
+/*** color-scheme ***/
 @media(prefers-color-scheme: light) {
     :root {
         --bg-page: #fff;
@@ -17,9 +19,27 @@
     }
 }
 
+
+/*** resposivility ***/
+
+@media (max-width: 1920px) { 
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 768px) { 
+    html {
+        font-size: 75%;
+    }
+}
+
+/*** page defaults ***/
+
 * {
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     list-style: none;
+    box-sizing: border-box;
 }
 
 a {
@@ -36,17 +56,11 @@ html, body {
     background-color: var(--bg-page);
 }
 
-@media (max-width: 1920px) { 
-    html {
-        font-size: 100%;
-    }
+div.container {
+    padding: 0 10%;
 }
 
-@media (max-width: 768px) { 
-    html {
-        font-size: 80%;
-    }
-}
+/*** navigation ***/
 
 header {
     position: fixed;
@@ -110,7 +124,7 @@ ul.nav-list li > a::after {
     display: block;
     position: absolute;
     margin-top: 3px;
-    border-bottom: 2px solid var(--bg-page);
+    border-bottom: 2px solid var(--text-body);
     transition:all .3s ease;
 }
 
@@ -122,14 +136,89 @@ ul.nav-list li:hover > a::after {
     display: block;
     position: absolute;
     margin-top: 3px;
-    border-bottom: 2px solid var(--bg-page);
+    border-bottom: 2px solid var(--text-body);
     transition:all .3s ease;
 }
 
-/****sections****/
+div.nav-bar i.bi-list {
+    display: none;
+    border: 1px solid rgba(255, 255, 255, .4);
+    border-radius: 0.25rem;
+    font-size: 1.65rem;
+    padding: 0.4rem 0.5rem;
+}
 
-div.container {
-    padding: 0 10%;
+@media (max-width: 768px) { 
+    div.nav-bar ul.nav-list {
+        display: none;
+    }
+
+    div.nav-bar i.bi-list {
+        display: block;
+    }
+}
+
+div.nav-expand {
+    display: block;
+    position: fixed;
+    right: -100%;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all .5s;
+    background-color: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+}
+
+div.nav-expand.open {
+    right: 0;
+    opacity: 1;
+}
+
+div.nav-expand-inner {
+    width: 80%;
+    height: 100vh;
+    background-color: var(--bg-page);
+    color: var(--text-body);
+    margin-left: auto;
+}
+
+div.nav-expand-inner span.nav-expand-title{
+    display: flex;
+    width: 100%;
+    padding: 1.75rem;
+    color: #fff;
+    background-color: #000;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+}
+
+div.nav-expand-inner span.nav-expand-title i{
+    margin-left: auto;
+}
+
+div.nav-expand-inner ul.nav-list {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+div.nav-expand-inner ul.nav-list li {
+    margin: 1em 0;
+}
+
+/*** home ****/
+
+div.section[data-anchor="home"] {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../img/home_bg.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    color: #fff;
 }
 
 div.container#home {
@@ -138,11 +227,6 @@ div.container#home {
     justify-content: center;
     height: 100vh;
     align-items: center;
-    background-image: url("../img/home_bg.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: bottom center;
-    color: #fff;
 }
 
 div.cover-text span {
@@ -158,7 +242,7 @@ div.cover-text h1 {
 div.cover-text h2 {
     margin: 0;
     margin-bottom: 1rem;
-    font-size: 3rem;
+    font-size: 8vw;
 }
 
 div.cover-text i {
@@ -173,15 +257,4 @@ span.sns-group {
     backdrop-filter: blur(8px);
     padding: 0.25em 0.75rem;
     border-radius: 1.5rem;
-}
-
-div.container#footer {
-    display: block;
-    border-top: 1px solid #f8f9fa;
-    font-size: 1rem;
-    padding: 1em 0;
-    height: 1.5rem;
-    text-align: center;
-    background-color:#fff;
-    color: #d2d2d2;
 }

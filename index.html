@@ -23,6 +23,22 @@
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="blog">Blog</a></li>
                 </ul>
+                <i class="bi bi-list" id="nav-expand"></i>
+            </div>
+            <div class="nav-expand">
+                <div class="nav-expand-inner">
+                    <span class="nav-expand-title">
+                        Menu
+                        <i class="bi bi-x-lg"></i>
+                    </span>
+                    <ul class="nav-list">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="blog">Blog</a></li>
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
@@ -49,34 +65,52 @@
             </div>
         </div>
         <div class="section">
-            <div class="container">
-                <h1>my portfolio</h1>
-                <h2>this website will be my first web-based portfolio</h2>
-                <hr>
-                <h3>it's already 4 am.. i'm gonna sleep immediatley</h3>
+            <div class="slide">
+                <div class="container">
+                    <h1>1</h1>
+                    <h2>this website will be my first web-based portfolio</h2>
+                    <hr>
+                    <h3>it's already 4 am.. i'm gonna sleep immediatley</h3>
+                </div>
+            </div>
+            <div class="slide">
+                <div class="container">
+                    <h1>2</h1>
+                    <h2>asap</h2>
+                    <hr>
+                    <h3>내 통장잔고 반쪼가리</h3>
+                </div>
             </div>
         </div>
         <div class="section">
             <div class="container">
                 <h1>please hire me</h1>
-                <h2>i wannna be your dog</h2>
+                <h2>me me me</h2>
                 <hr>
                 <h3>bow wow bow wow</h3>
-            </div>
-        </div>
-        <div class="section fp-auto-height">
-            <div class="container" id="footer">
-                <a href="http://gwlee-dev.github.io">gwlee-dev.github.io</a>
             </div>
         </div>
     </div>
     <script>
         new fullpage('#fullpage', {
-            anchors:['home', 'about', 'portfolio', 'contact', 'footer'],
-            autoScrolling:true,
-            scrollHorizontally: true
+            anchors: ['home', 'about', 'portfolio', 'contact'],
+            autoScrolling: true,
+            scrollHorizontally: true,
+            showActiveTooltip: true,
+            slidesNavigation: true,
+            slidesNavPosition: 'bottom',
+            paddingTop: '4.75em'
         });
-        Splitting();
+
+        $('i#nav-expand').on("click", function(){
+            $('div.nav-expand').toggleClass('open');
+        });
+        $('span.nav-expand-title i').on("click", function(){
+            $('div.nav-expand').toggleClass('open');
+        });
+        $('div.nav-expand-inner li').on("click", function(){
+            $('div.nav-expand').removeClass('open');
+        });
     </script>
 </body>
 </html>
