@@ -1,4 +1,4 @@
-@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard-dynamic-subset.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.1/font/bootstrap-icons.css");
 
 
@@ -6,38 +6,23 @@
 @media(prefers-color-scheme: light) {
     :root {
         --bg-page: #fff;
-        --bg-nav: #f8f9fa;
-        --text-body: #323232;
+        --bg-light: #ebebeb;
+        --text-body: #000;
     }
 }
 
 @media(prefers-color-scheme: dark) {
     :root {
         --bg-page: #000;
-        --bg-nav: #343a40;
-        --text-body: #ffffff;
-    }
-}
-
-
-/*** resposivility ***/
-
-@media (max-width: 1920px) { 
-    html {
-        font-size: 100%;
-    }
-}
-
-@media (max-width: 768px) { 
-    html {
-        font-size: 75%;
+        --bg-light: #323232;
+        --text-body: #fff;
     }
 }
 
 /*** page defaults ***/
 
 * {
-    font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+    font-family: 'Pretendard Variable', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
     list-style: none;
     box-sizing: border-box;
 }
@@ -49,7 +34,6 @@ a {
 
 html, body {
     width: 100%;
-    overflow-x: hidden;
     position: relative;
     color: var(--text-body);
     margin: 0;
@@ -57,7 +41,88 @@ html, body {
 }
 
 div.container {
+    display: flex;
     padding: 0 10%;
+}
+
+div.container div.contents-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 60%;
+}
+
+div.container div.title-area {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    height: fit-content;
+    width:fit-content;
+    align-items: flex-end;
+    width: 40%;
+}
+
+@media (max-width: 768px) {
+    div.container div.title-area {
+        left: 10%;
+        top: 8rem;
+    }
+    
+    div.container div.contents-area {
+        display: block;
+        position: unset;
+        height: fit-content;
+        width: 100vw;
+        margin-top: 4rem;
+    }
+}
+
+div.contents-area img {
+    width: 4rem;
+    height: 4rem;
+}
+
+p.paragraph span {
+    display: block;
+    font-size: 2vh;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+p.paragraph span strong {
+    font-weight: 900;
+    margin-right: 0.4rem;
+}
+
+p.paragraph span:first-child {
+    font-size: 4vh;
+    font-weight: 700;
+}
+
+p.paragraph:first-child {
+    margin-bottom: 1em;
+}
+
+p.paragraph:not(:last-child) {
+    margin-bottom: 1em;
+}
+
+@media (max-width: 1920px) { 
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 768px) { 
+    html {
+        font-size: 75%;
+    }
 }
 
 /*** navigation ***/
@@ -80,21 +145,44 @@ nav.top-nav > div.nav-bar {
     display: flex;
     align-items: center;
     padding: 0 3rem;
-    background-color: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(8px);
+    background-color: rgba(15, 1, 22, 0.5);
+    backdrop-filter: blur(12px);
 }
 
 a.nav-logo {
     display: block;
-    font-size: 1.75rem;
-    line-height: 1.75rem;
-    letter-spacing: 1rem;
+    /* letter-spacing: 1rem; */
     margin: 1em 0;
     margin-right: auto;
 }
 
-a.nav-logo span {
-    font-weight: bold;
+a.nav-logo span.char {
+    font-weight: 100;
+    line-height: 1.75rem;
+    font-size: 1.75rem;
+    animation: loop 4s infinite;
+    --delay: calc((var(--char-index) + 1) * 0.15s);
+    animation-delay: var(--delay);
+}
+
+a.nav-logo span.whitespace {
+    font-size: inherit;
+}
+
+
+@keyframes loop {
+    0% {
+		font-weight: 50;
+	}
+	15% {
+		font-weight: 700;
+	}
+    50% {
+		font-weight: 700;
+	}
+	100% {
+		font-weight: 50;
+	}
 }
 
 ul.nav-list {
@@ -128,6 +216,10 @@ ul.nav-list li > a::after {
     transition:all .3s ease;
 }
 
+div.nav-bar ul.nav-list li > a::after {
+    border-bottom: 2px solid #fff;
+}
+
 ul.nav-list li:hover > a::after {
     content: '';
     width: 100%;
@@ -136,7 +228,7 @@ ul.nav-list li:hover > a::after {
     display: block;
     position: absolute;
     margin-top: 3px;
-    border-bottom: 2px solid var(--text-body);
+    border-bottom: 2px solid inherit;
     transition:all .3s ease;
 }
 
@@ -148,7 +240,16 @@ div.nav-bar i.bi-list {
     padding: 0.4rem 0.5rem;
 }
 
+div.nav-expand i.bi-x-lg {
+    color: var(--text-body);
+}
+
 @media (max-width: 768px) { 
+    div.nav-bar a.nav-logo {
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+    }
+    
     div.nav-bar ul.nav-list {
         display: none;
     }
@@ -187,9 +288,8 @@ div.nav-expand-inner span.nav-expand-title{
     display: flex;
     width: 100%;
     padding: 1.75rem;
-    color: #fff;
-    background-color: #000;
     font-size: 1.75rem;
+    font-weight: 700;
     line-height: 1.75rem;
 }
 
@@ -205,6 +305,7 @@ div.nav-expand-inner ul.nav-list {
 
 div.nav-expand-inner ul.nav-list li {
     margin: 1em 0;
+    font-size: 2rem;
 }
 
 /*** home ****/
@@ -219,6 +320,7 @@ div.section[data-anchor="home"] {
     background-repeat: no-repeat;
     background-position: bottom center;
     color: #fff;
+    overflow: hidden;
 }
 
 div.container#home {
@@ -233,28 +335,119 @@ div.cover-text span {
     font-size: 1.25rem;
 }
 
-div.cover-text h1 {
-    margin: 0;
-    font-size: 10vw;
-    text-transform: uppercase;
-}
-
-div.cover-text h2 {
-    margin: 0;
-    margin-bottom: 1rem;
-    font-size: 8vw;
-}
-
 div.cover-text i {
-    font-size: 1.5rem;
-    line-height: 1.5rem;
-    margin: 0.1rem;
+    font-size: 1.75vw;
+    line-height: 1.7vw;
+    margin: 0 0.75vw;
 }
 
 span.sns-group {
     display: inline-block;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(8px);
-    padding: 0.25em 0.75rem;
-    border-radius: 1.5rem;
+    padding: 1vw 0.75vw;
+    border-radius: 3vw;
+}
+
+@media (max-width: 768px) { 
+    div.cover-text i {
+        font-size: 3.5vw;
+        line-height: 3.5vw;
+        margin: 0 1.5vw;
+    }
+
+    span.sns-group {
+        padding: 2vw 1.5vw;
+    }
+
+    div.cover-text h2 {
+        font-size: 7vw;
+    }
+}
+
+div.cover-text h1 {
+    margin: 0;
+    font-size: 11vw;
+    text-align: center;
+    font-weight: bold;
+}
+
+div.cover-text h2 {
+    margin-bottom: 0;
+    animation: spread-margin 1s cubic-bezier(.8,0,.2,1) forwards;
+}
+
+div.cover-text h2 span.char {
+    margin-bottom: inherit;
+    font-size: 8.8vw;
+    animation: spread 1s cubic-bezier(.8,0,.2,1) forwards;
+    animation-delay: calc( 0.2s * var(--distance-percent) );
+}
+
+@keyframes spread {
+    to {
+		transform: scale(0.6) translateX( calc(1.25em * var(--distance-sine)) );
+	}
+}
+
+@keyframes spread-margin {
+    to {
+		margin-bottom: -1vh;
+	}
+}
+
+h1.section-title {
+    margin-left: auto;
+    font-size: 6vw;
+    margin-right: 3vw;
+}
+
+@media (max-width: 768px) { 
+    h1.section-title {
+        font-size: 4vw;
+        margin-right: 5vw;
+    }
+}
+
+h1.section-title.ani::before {
+    content: '>';
+    font: inherit;
+    vertical-align: 0.1em;
+    display: inline-block;
+    transform: scaleY(0) translateX(-1em);
+    margin-right: -0.25em;
+}
+
+h1.section-title.ani::before {
+    animation: section-title-before 0.8s cubic-bezier(.75,0,.24,.98) forwards;
+    animation-delay: calc( 0.015s * var(--char-index) );
+}
+
+h1.section-title.ani .char {
+    animation: section-title 0.8s cubic-bezier(.75,0,.24,.98) forwards;
+    animation-delay: calc( 0.015s * var(--char-index) );
+}
+
+@keyframes section-title-before {
+    to {
+        transform: translateX(-0.15em);
+    }
+}
+
+@keyframes section-title {
+    to {
+        transform: translateX(1em);
+        transform: translateX(0.5em) translateX( calc(0.1em * var(--char-index)) );
+    }
+}
+
+div.section.pf div.container{
+    display: flex;
+    justify-content: flex-end;
+}
+
+img.pf-img {
+    margin-top: auto;
+    max-width: 100%;
+    height: auto;
 }

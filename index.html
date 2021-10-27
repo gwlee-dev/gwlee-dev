@@ -8,14 +8,17 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullpage.js@3.1.2/dist/fullpage.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/splitting@1.0.6/dist/splitting.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
         <nav class="top-nav">
             <div class="nav-bar">
-                <a class="nav-logo" href="/">GW<span>LEE</span></a>
+                <a class="nav-logo" href="/" data-splitting>Geonwoo Lee</a>
                 <ul class="nav-list">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
@@ -28,7 +31,7 @@
             <div class="nav-expand">
                 <div class="nav-expand-inner">
                     <span class="nav-expand-title">
-                        Menu
+                        Contents
                         <i class="bi bi-x-lg"></i>
                     </span>
                     <ul class="nav-list">
@@ -43,11 +46,11 @@
         </nav>
     </header>
     <div id="fullpage">
-        <div class="section active">
+        <div class="section active" data-anchor="home">
             <div class="container" id="home">
                 <div class="cover-text">
-                    <h2>Web Publisher</h2>
-                    <h1>GEONWOO LEE</h1>
+                    <h2 class="spread-out" data-splitting>Web Publisher</h2>
+                    <h1>Geonwoo Lee</h1>
                     <span class="sns-group">
                         <a href="http://instagram.com/thisis_woo"><i class="bi bi-instagram"></i></a>
                         <a href="http://be.net/gwlee"><i class="bi bi-behance"></i></a>
@@ -56,50 +59,110 @@
                 </div>
             </div>
         </div>
-        <div class="section">
-            <div class="container">
-                <h1>about me</h1>
-                <h2>2021 10 23 (주) 그리드원 근무중</h2>
-                <hr>
-                <h3>퍼블도하고 디자인도 해요🍟🍟</h3>
+        <div class="section" data-anchor="about">
+            <div class="container" >
+                <div class="contents-area">
+                    <p class="paragraph">
+                        <span>이건우</span>
+                        <span><strong>Geonwoo Lee</strong></span>
+                        <span>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            서울특별시 송파구
+                        </span>
+                        <span><strong>2021</strong>(주)그리드원 솔루션개발본부</span>
+                        <span><strong>2020</strong>(주)다원교육 브랜딩마케팅팀</span>
+                    </p>
+                    <p class="paragraph">
+                        <span>education</span>
+                        <span><strong>가천대학교</strong> 컴퓨터공학과 휴학</span>
+                    </p>
+                    <p class="paragraph">
+                        <span>licences</span>
+                        <span>웹디자인/컴퓨터그래픽스/전자기기/</span>
+                        <span>전자계산기/정보기기운용 - 기능사</span>
+                        <span>외 PC정비사/ITQ/GTQ/DIAT/워드/컴활</span>
+                    </p>
+                    <p class="paragraph">
+                        <span>awards</span>
+                        <span><strong>2020 가천대학교</strong>창의 NTree 캠프 우수상</span>
+                        <span><strong>2019 한국정보통신학회</strong>학생우수논문상</span>
+                        <span><strong>2018 대전광역시</strong>기능경기대회(IT) 은메달</span>
+                        <span><strong>2016 SK플레닛-안양시</strong>앱잼 최우수상</span>
+                    </p>
+                </div>
+                <div class="title-area">
+                    <h1 class="section-title" data-splitting>about me</h1>
+                </div>
             </div>
         </div>
         <div class="section">
-            <div class="slide">
-                <div class="container">
-                    <h1>1</h1>
-                    <h2>this website will be my first web-based portfolio</h2>
-                    <hr>
-                    <h3>it's already 4 am.. i'm gonna sleep immediatley</h3>
+            <div class="container">
+                <div class="contents-area">
+                    <p class="paragraph">
+                        <span>available</span>
+                        <span><i class="bi bi-brush"></i>&nbsp;&nbsp;Photoshop / Illustrator / InDesign / Premier</span>
+                        <span><i class="bi bi-globe"></i>&nbsp;&nbsp;HTML5 / CSS3 / JavaScript / PHP</span>
+                        <span><i class="bi bi-code-slash"></i>&nbsp;&nbsp;C / Python / Git / RPA</span>
+                    </p>
+                    <p class="paragraph">
+                        <span>projects</span>
+                        <span><strong>2021 퍼블리싱</strong>NH 농협은행 RPA 포탈</span>
+                        <span><strong>2021 퍼블리싱</strong>(주)그리드원 홈페이지</span>
+                        <span><strong>2020 디자인</strong>이로동물병원 반려동물 심박수 측청 앱</span>
+                        <span><strong>2020 디자인</strong>세계산업디자인의날 운영위원회</span>
+                        <span><strong>2019 디자인</strong>충남삼성고등학교 자습실 예매 웹</span>
+                        <a href="#">show more..</a>
+                    </p>
                 </div>
-            </div>
-            <div class="slide">
-                <div class="container">
-                    <h1>2</h1>
-                    <h2>asap</h2>
-                    <hr>
-                    <h3>내 통장잔고 반쪼가리</h3>
+                <div class="title-area">
+                    <h1 class="section-title" data-splitting>skills</h1>
                 </div>
             </div>
         </div>
-        <div class="section">
+        <div class="section pf" data-anchor="portfolio">
             <div class="container">
-                <h1>please hire me</h1>
-                <h2>me me me</h2>
-                <hr>
-                <h3>bow wow bow wow</h3>
+                <img class="pf-img" src="img/nh/assets.png">
+            </div>
+        </div>
+        <div class="section pf" data-anchor="portfolio">
+            <div class="container">
+                <h1 class="section-title" data-splitting>페이지 공사중</h1>
+            </div>
+            <h2 style="margin-left: 50%;"><a style="color: #0066b1;" href="https://www.behance.net/gwlee">여기</a>에서 포트폴리오 확인하기</h1>
+        </div>
+        <div class="section" data-anchor="contact">
+            <div class="container">         
+                <div class="contents-area">
+                    <p class="paragraph">
+                        <span>문의</span>
+                        <span>gwlee@kakao.com</span>
+                        <span>010-9854-0720</span>
+                        <span>카카오톡: roke9854</span>
+                        <img src="img/kakao_qr.jpg" style="width: 7rem; height: 7rem; margin-left: -0.65rem; margin-top: 2rem;">
+                    </p>
+                </div>
+                <div class="title-area">
+                    <h1 class="section-title" data-splitting>contact</h1>
+                </div>
             </div>
         </div>
     </div>
     <script>
         new fullpage('#fullpage', {
-            anchors: ['home', 'about', 'portfolio', 'contact'],
             autoScrolling: true,
-            scrollHorizontally: true,
             showActiveTooltip: true,
             slidesNavigation: true,
             slidesNavPosition: 'bottom',
-            paddingTop: '4.75em'
+
+            afterLoad: function(origin){
+                var loadedSection = this;
+                $('h1.section-title').addClass('ani');
+            },
+            
+            onLeave: function(origin){
+                var loadedSection = this;
+                $('h1.section-title').removeClass('ani');
+            }
         });
 
         $('i#nav-expand').on("click", function(){
@@ -111,6 +174,8 @@
         $('div.nav-expand-inner li').on("click", function(){
             $('div.nav-expand').removeClass('open');
         });
+        Splitting();
+        AOS.init();
     </script>
 </body>
 </html>
