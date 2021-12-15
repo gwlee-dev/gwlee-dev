@@ -200,12 +200,13 @@
             $('html').scrollTop(pos);
         };
         
-        $(document).ready(function() {
+        $(window).ready(function(){
             setTimeout(function() {
                 _scrollTo(0);
                 $('body').removeClass('loading');
                 AOS.init();
-            }, 500);
+            }, 300);
+            console.log("load");
         });
     </script>
 </body>
