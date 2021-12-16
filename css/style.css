@@ -230,22 +230,10 @@ ul.sns-list li {
     position: relative;
 }
 
-.stack-list > div:not(:first-child)::after {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    display: block;
-    content: '';
-    height: 1rem;
-    width: 1px;
-    background-color: #000;
-    opacity: .2;
-}
 
 .stack-list svg {
     min-height: 2rem;
-    max-height: 4rem;
+    max-height: 3rem;
     margin-bottom: 0.5rem;
 }
 
