@@ -3,11 +3,7 @@
 [![gwlee.kr](https://img.shields.io/badge/gwlee.kr-000000?style=for-the-badge&logo=googlechrome&logoColor=white)](https://gwlee.kr)
 
 ![Profile views](https://komarev.com/ghpvc/?username=gwlee-dev&style=for-the-badge&color=0e75b6)
-
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=gwlee-dev&show_icons=true&theme=transparent&hide_border=true)
-
-![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=gwlee-dev&layout=compact&theme=transparent&hide_border=true)
-
-![GitHub Streak](https://streak-stats.demolab.com?user=gwlee-dev&theme=transparent&hide_border=true)
+![Followers](https://img.shields.io/github/followers/gwlee-dev?style=for-the-badge&logo=github&label=followers)
+![Stars](https://img.shields.io/github/stars/gwlee-dev?style=for-the-badge&logo=github&label=stars)
 
 </div>
