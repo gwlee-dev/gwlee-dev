@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 42" role="img" aria-label="[01] STACK">
+  <style>
+    .k { font: 700 20px 'SF Mono', ui-monospace, Menlo, Consolas, monospace; fill: #1447e6; letter-spacing: 0.2em; }
+  </style>
+  <text x="0" y="23" class="k">[01] STACK</text>
+</svg>
