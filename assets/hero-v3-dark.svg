@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 132" role="img" aria-label="이건우 — Frontend Developer">
-  <style>
-    .name { font: 800 62px -apple-system, 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; fill: #f0f6fc; letter-spacing: -0.02em; }
-    .dot  { fill: #1447e6; }
-    .sub  { font: 700 14px 'SF Mono', ui-monospace, Menlo, Consolas, monospace; fill: #9198a1; letter-spacing: 0.28em; }
-  </style>
-  <text x="0" y="72" class="name">이건우<tspan class="dot">.</tspan></text>
-  <text x="4" y="118" class="sub">FRONTEND DEVELOPER</text>
-</svg>
